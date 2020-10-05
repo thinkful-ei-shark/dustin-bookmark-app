@@ -88,6 +88,14 @@ function handleNewBookmarkSubmit(){
     });
   }
 
+function clearFormOnSubmit(){
+   $(document).ready(function(){
+     $('.sub-it').on(submit,function(){
+       $('.js-bookmark-title').val('');
+     })
+   })
+ };
+
 function removeBookmarkWhenClicked() {
     $('.js-bookmarks-list').on('click', '.js-bookmark-delete', event => {
       const id = getItemIdFromElement(event.currentTarget);
@@ -145,6 +153,7 @@ function bindEventListeners(){
     removeBookmarkWhenClicked();
     minimumRatingHandler();
     handleToggleExpand();
+    clearFormOnSubmit();
 
     
    
